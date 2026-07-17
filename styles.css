@@ -1,17 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
 
 :root {
-  color: #183529;
-  background: #f2efe6;
+  color: #0f3f6c;
+  background: #f4f9ff;
   font-family: "DM Sans", Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --green: #173b2a;
-  --green-deep: #0e291d;
-  --cream: #f2efe6;
-  --sand: #d8c9a7;
-  --orange: #ce6f3e;
-  --line: rgba(23, 59, 42, 0.2);
+  --green: #0d4f88;
+  --green-deep: #082b4c;
+  --cream: #f4f9ff;
+  --sand: #d9ecff;
+  --orange: #2f86d8;
+  --line: rgba(13, 79, 136, 0.18);
+  --muted: #5e7895;
 }
 
 * {
@@ -194,8 +195,8 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(6, 24, 16, 0.88) 0%, rgba(6, 24, 16, 0.57) 40%, rgba(6, 24, 16, 0.08) 74%),
-    linear-gradient(0deg, rgba(6, 24, 16, 0.42), transparent 50%);
+    linear-gradient(90deg, rgba(5, 35, 66, 0.9) 0%, rgba(5, 35, 66, 0.6) 42%, rgba(5, 35, 66, 0.1) 75%),
+    linear-gradient(0deg, rgba(5, 35, 66, 0.4), transparent 52%);
 }
 
 .hero__content {
@@ -254,7 +255,7 @@ button {
 .intro h2 em,
 .approach h2 em,
 .contact h2 em {
-  color: #e0b47c;
+  color: #9fd4ff;
   font-weight: 400;
 }
 
@@ -328,9 +329,9 @@ button {
   right: 0;
   bottom: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(108px, 1fr));
+  grid-template-columns: repeat(5, minmax(108px, 1fr));
   width: var(--hero-rail-width);
-  background: rgba(10, 36, 25, 0.9);
+  background: rgba(6, 39, 73, 0.9);
   backdrop-filter: blur(12px);
 }
 
@@ -365,7 +366,7 @@ button {
   bottom: calc(var(--hero-rail-height) + 34px);
   left: clamp(24px, 7.5vw, 124px);
   margin: 0;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.68);
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -388,7 +389,7 @@ button {
 
 .intro__index {
   margin: 70px 0 0;
-  color: rgba(23, 59, 42, 0.42);
+  color: rgba(13, 79, 136, 0.4);
   font-family: "Instrument Serif", Georgia, serif;
   font-size: 24px;
 }
@@ -399,11 +400,11 @@ button {
   align-items: end;
   gap: clamp(28px, 5vw, 88px);
   padding: clamp(28px, 4vw, 40px);
-  border: 1px solid rgba(23, 59, 42, 0.1);
+  border: 1px solid rgba(13, 79, 136, 0.1);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.16)),
-    rgba(255, 255, 255, 0.26);
-  box-shadow: 0 24px 60px rgba(23, 59, 42, 0.05);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72)),
+    rgba(255, 255, 255, 0.7);
+  box-shadow: 0 24px 60px rgba(13, 79, 136, 0.08);
 }
 
 .intro h2,
@@ -419,13 +420,13 @@ button {
 
 .intro h2 em,
 .contact h2 em {
-  color: #a65d39;
+  color: var(--orange);
 }
 
 .intro__main > p,
 .contact__copy > p:last-child {
   margin: 0;
-  color: #617268;
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.75;
 }
@@ -440,7 +441,7 @@ button {
 .division-tabs {
   border: 1px solid var(--line);
   border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .division-tabs button {
@@ -467,7 +468,7 @@ button {
 
 .division-tabs button.is-active {
   padding-left: 14px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(223, 239, 255, 0.88);
 }
 
 .division-tabs__number {
@@ -496,9 +497,9 @@ button {
   display: grid;
   grid-template-columns: 58% 42%;
   color: var(--green);
-  background: color-mix(in srgb, var(--accent) 32%, #f5f0e5);
-  border: 1px solid rgba(23, 59, 42, 0.1);
-  box-shadow: 0 30px 80px rgba(23, 59, 42, 0.08);
+  background: color-mix(in srgb, var(--accent) 28%, #f6fbff);
+  border: 1px solid rgba(13, 79, 136, 0.1);
+  box-shadow: 0 30px 80px rgba(13, 79, 136, 0.1);
 }
 
 .division-feature__wash {
@@ -507,7 +508,7 @@ button {
   opacity: 0.35;
   background:
     radial-gradient(circle at 86% 18%, var(--accent) 0, transparent 34%),
-    repeating-linear-gradient(125deg, transparent 0, transparent 44px, rgba(23, 59, 42, 0.035) 45px);
+    repeating-linear-gradient(125deg, transparent 0, transparent 44px, rgba(13, 79, 136, 0.04) 45px);
 }
 
 .division-feature__content {
@@ -535,7 +536,7 @@ button {
 .division-feature__detail {
   max-width: 540px;
   margin: 0;
-  color: rgba(23, 59, 42, 0.66);
+  color: rgba(13, 79, 136, 0.72);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -551,7 +552,7 @@ button {
 
 .division-feature li {
   padding: 8px 11px;
-  border: 1px solid rgba(23, 59, 42, 0.18);
+  border: 1px solid rgba(13, 79, 136, 0.18);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.07em;
@@ -559,7 +560,7 @@ button {
 
 .division-feature li span {
   margin-right: 4px;
-  color: #a65d39;
+  color: var(--orange);
 }
 
 .division-feature__graphic {
@@ -567,20 +568,20 @@ button {
   z-index: 1;
   display: grid;
   place-items: center;
-  border-left: 1px solid rgba(23, 59, 42, 0.12);
+  border-left: 1px solid rgba(13, 79, 136, 0.12);
 }
 
 .division-feature__graphic svg {
   width: 65%;
   height: 65%;
-  color: rgba(23, 59, 42, 0.36);
+  color: rgba(13, 79, 136, 0.28);
 }
 
 .division-feature__graphic span {
   position: absolute;
   right: 28px;
   bottom: 15px;
-  color: rgba(23, 59, 42, 0.13);
+  color: rgba(13, 79, 136, 0.11);
   font-family: "Instrument Serif", Georgia, serif;
   font-size: 130px;
   line-height: 1;
@@ -591,7 +592,7 @@ button {
   padding-bottom: clamp(78px, 9vw, 128px);
   color: #fff;
   background:
-    radial-gradient(circle at top right, rgba(211, 168, 112, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(159, 212, 255, 0.18), transparent 30%),
     var(--green-deep);
 }
 
@@ -602,7 +603,7 @@ button {
 }
 
 .approach h2 {
-  color: #e9e6dc;
+  color: #eef7ff;
 }
 
 .principles {
@@ -626,7 +627,7 @@ button {
 }
 
 .principles span {
-  color: #d3a870;
+  color: #9fd4ff;
   font-size: 10px;
 }
 
@@ -663,7 +664,7 @@ button {
 
 .statement p:nth-child(2) {
   padding-left: 12%;
-  color: #a65d39;
+  color: var(--orange);
 }
 
 .statement p:nth-child(3) {
@@ -679,7 +680,7 @@ button {
   align-items: start;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0)),
-    #dfd8c8;
+    #e5f1ff;
 }
 
 .contact__copy .eyebrow {
@@ -703,16 +704,16 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 28px 22px;
   padding: clamp(28px, 4vw, 42px);
-  border: 1px solid rgba(23, 59, 42, 0.12);
-  background: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 24px 60px rgba(23, 59, 42, 0.06);
+  border: 1px solid rgba(13, 79, 136, 0.12);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 60px rgba(13, 79, 136, 0.08);
 }
 
 .contact label {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: rgba(23, 59, 42, 0.68);
+  color: rgba(13, 79, 136, 0.68);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 9px;
@@ -725,7 +726,7 @@ button {
   width: 100%;
   padding: 15px 0;
   border: 0;
-  border-bottom: 1px solid rgba(23, 59, 42, 0.35);
+  border-bottom: 1px solid rgba(13, 79, 136, 0.35);
   border-radius: 0;
   outline: none;
   color: var(--green);
@@ -742,7 +743,7 @@ button {
 
 .contact input::placeholder,
 .contact textarea::placeholder {
-  color: rgba(23, 59, 42, 0.4);
+  color: rgba(13, 79, 136, 0.4);
 }
 
 .form-wide {
@@ -757,9 +758,9 @@ button {
 .form-success {
   align-self: center;
   padding: 44px;
-  border: 1px solid rgba(23, 59, 42, 0.16);
-  background: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 24px 60px rgba(23, 59, 42, 0.06);
+  border: 1px solid rgba(13, 79, 136, 0.16);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 60px rgba(13, 79, 136, 0.08);
 }
 
 .form-success > span {
@@ -778,14 +779,14 @@ button {
 .form-success p {
   max-width: 500px;
   margin-bottom: 30px;
-  color: #617268;
+  color: var(--muted);
   font-size: 13px;
   line-height: 1.7;
 }
 
 footer {
   color: #fff;
-  background: #0a2419;
+  background: #082746;
 }
 
 .footer__main {
@@ -975,7 +976,7 @@ footer {
   }
 
   .hero__veil {
-    background: linear-gradient(90deg, rgba(6, 24, 16, 0.9), rgba(6, 24, 16, 0.27));
+    background: linear-gradient(90deg, rgba(5, 35, 66, 0.92), rgba(5, 35, 66, 0.28));
   }
 
   .hero__content {
@@ -1001,7 +1002,7 @@ footer {
 
   .hero__rail {
     width: 100%;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .hero__rail a {
@@ -1054,7 +1055,7 @@ footer {
 
   .division-tabs {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     overflow: hidden;
   }
 
