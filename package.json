@@ -4,10 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node --watch server.js",
+    "build": "node build-static.js",
+    "dev": "node server.js",
+    "preview": "node server.js",
     "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^5.2.1"
   }
 }
