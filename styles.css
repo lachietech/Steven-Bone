@@ -1097,8 +1097,8 @@ footer {
   }
 
   .principles article + article {
-    padding-left: 0;
-    border-left: 0;
+    padding-left: 22px;
+    border-left: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   .principles h3 {
