@@ -3,13 +3,13 @@ const divisions = [
     number: "01",
     slug: "prawn-farming",
     label: "Prawn farming",
-    title: "32 gram earth-pond shrimp",
+    title: "Earth-pond prawn farming",
     icon: "prawn",
     accent: "#79c0f2",
-    summary: "Prawn farming built around premium size, healthy ponds and consistent quality.",
+    summary: "Prawn farming built around healthy ponds, careful handling and consistent quality.",
     detail:
-      "Bone's grows prawns in earth ponds with a clear performance standard, producing shrimp that reach an exceptional 32 grams. From pond preparation through to harvest handling, the operation is tuned for quality, size and reliability.",
-    points: ["32 gram shrimp", "Earth-pond production", "Quality-led harvest handling"],
+      "Bone's grows prawns in earth ponds with a focus on sound pond management and careful harvest handling. The operation is shaped around dependable production practices and consistent product quality.",
+    points: ["Pond-focused production", "Earth-pond production", "Careful harvest handling"],
   },
   {
     number: "02",
@@ -69,7 +69,10 @@ const divisionTabs = [...document.querySelectorAll(".division-tabs [data-divisio
 const divisionLinks = [...document.querySelectorAll("a[data-division]")];
 const contactForm = document.querySelector("#contact-form");
 const formSuccess = document.querySelector("#form-success");
+const formStatus = document.querySelector("#form-status");
 const sendAnotherButton = document.querySelector("#send-another");
+const submitButton = contactForm.querySelector('button[type="submit"]');
+const submitLabel = submitButton.querySelector("span");
 
 function openMenu() {
   menu.classList.add("is-open");
@@ -127,14 +130,49 @@ divisionLinks.forEach((link) => {
   link.addEventListener("click", () => selectDivision(Number(link.dataset.division)));
 });
 
-contactForm.addEventListener("submit", (event) => {
+contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
-  contactForm.classList.add("is-hidden");
-  formSuccess.classList.remove("is-hidden");
+
+  formStatus.classList.add("is-hidden");
+  formStatus.textContent = "";
+
+  if (!contactForm.reportValidity()) return;
+
+  submitButton.disabled = true;
+  submitButton.setAttribute("aria-busy", "true");
+  submitLabel.textContent = "Sending...";
+
+  try {
+    const payload = Object.fromEntries(new FormData(contactForm).entries());
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(result.error || "We could not send your enquiry. Please try again.");
+    }
+
+    contactForm.classList.add("is-hidden");
+    formSuccess.classList.remove("is-hidden");
+    formSuccess.focus();
+  } catch (error) {
+    formStatus.textContent =
+      error.message || "We could not send your enquiry. Please try again.";
+    formStatus.classList.remove("is-hidden");
+  } finally {
+    submitButton.disabled = false;
+    submitButton.removeAttribute("aria-busy");
+    submitLabel.textContent = "Send enquiry";
+  }
 });
 
 sendAnotherButton.addEventListener("click", () => {
   contactForm.reset();
+  formStatus.classList.add("is-hidden");
+  formStatus.textContent = "";
   formSuccess.classList.add("is-hidden");
   contactForm.classList.remove("is-hidden");
   contactForm.querySelector("input").focus();

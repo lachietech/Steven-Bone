@@ -3,10 +3,17 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "node build-static.js",
-    "dev": "node server.js",
-    "preview": "node server.js",
-    "start": "node server.js"
+    "dev": "nodemon --watch src --ext js --exec \"node --env-file=.env src/server.js\"",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "resend": "^6.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

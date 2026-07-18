@@ -755,6 +755,28 @@ button {
   margin-top: 12px;
 }
 
+.contact .button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-honeypot {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form-status {
+  margin: -8px 0 0;
+  color: #9c2f25;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 .form-success {
   align-self: center;
   padding: 44px;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Bone's Farming & Transport Co. brings world-class prawn farming, hydroponics, trailer building, vermiculture and transport together under one capable regional operation."
+      content="Bone's Farming & Transport Co. brings prawn farming, hydroponics, trailer building, vermiculture and transport together under one capable regional operation."
     />
     <meta name="theme-color" content="#173b2a" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -112,15 +112,15 @@
           <div class="hero__content">
             <p class="eyebrow eyebrow--light">
               <span></span>
-              32 gram shrimp grown in earth ponds
+              Practical earth-pond prawn farming
             </p>
             <h1>
-              The biggest prawns on earth.
+              Farming and transport.
               <br />
-              <em>Built for the whole farm.</em>
+              <em>Built around real work.</em>
             </h1>
             <p class="hero__intro">
-              Bone's Farming &amp; Transport Co. leads with standout prawn farming, alongside
+              Bone's Farming &amp; Transport Co. brings together prawn farming,
               hydroponics, trailer building, vermiculture and dependable transport under
               one trusted name.
             </p>
@@ -138,7 +138,7 @@
           <div class="hero__rail" aria-label="Business divisions">
             <a href="#operations" data-division="0">
               <svg width="20" height="20"><use href="#icon-prawn"></use></svg>
-              <span>World-class prawn farming</span>
+              <span>Earth-pond prawn farming</span>
             </a>
             <a href="#operations" data-division="1">
               <svg width="20" height="20"><use href="#icon-sprout"></use></svg>
@@ -218,20 +218,19 @@
                 <span></span>
                 <b data-feature="label">Prawn farming</b>
               </p>
-              <h3 data-feature="title">32 gram earth-pond shrimp</h3>
+              <h3 data-feature="title">Earth-pond prawn farming</h3>
               <p class="division-feature__summary" data-feature="summary">
-                Prawn farming built around premium size, healthy ponds and consistent quality.
+                Prawn farming built around healthy ponds, careful handling and consistent quality.
               </p>
               <p class="division-feature__detail" data-feature="detail">
-                Bone's grows prawns in earth ponds with a clear performance standard,
-                producing shrimp that reach an exceptional 32 grams. From pond preparation
-                through to harvest handling, the operation is tuned for quality, size and
-                reliability.
+                Bone's grows prawns in earth ponds with a focus on sound pond management
+                and careful harvest handling. The operation is shaped around dependable
+                production practices and consistent product quality.
               </p>
               <ul data-feature="points">
-                <li><span>+</span> 32 gram shrimp</li>
+                <li><span>+</span> Pond-focused production</li>
                 <li><span>+</span> Earth-pond production</li>
-                <li><span>+</span> Quality-led harvest handling</li>
+                <li><span>+</span> Careful harvest handling</li>
               </ul>
               <a class="text-link" href="#contact">
                 Enquire about this division
@@ -282,7 +281,7 @@
         </section>
 
         <section class="statement section-shell">
-          <p>We grow bigger prawns.</p>
+          <p>We grow quality prawns.</p>
           <p>We build for the job.</p>
           <p>We know the road.</p>
         </section>
@@ -296,23 +295,23 @@
             <h2>Let's get your next<br /><em>project moving.</em></h2>
             <p>
               Tell us which part of the Bone's operation you are interested in and a member
-              of the team can take it from there, whether it is premium prawns, hydroponics,
+              of the team can take it from there, whether it is prawn farming, hydroponics,
               trailer building, vermiculture or transport.
             </p>
           </div>
 
-          <form id="contact-form">
+          <form id="contact-form" novalidate>
             <label>
               Your name
-              <input name="name" placeholder="Name" required />
+              <input name="name" placeholder="Name" autocomplete="name" minlength="2" maxlength="100" required />
             </label>
             <label>
               Email address
-              <input name="email" type="email" placeholder="you@company.com" required />
+              <input name="email" type="email" placeholder="you@company.com" autocomplete="email" maxlength="254" required />
             </label>
             <label class="form-wide">
               I'm interested in
-              <select name="division">
+              <select name="division" required>
                 <option value="" disabled selected>Select a division</option>
                 <option value="prawn-farming">Prawn farming</option>
                 <option value="hydroponics">Hydroponics</option>
@@ -324,20 +323,25 @@
             </label>
             <label class="form-wide">
               How can we help?
-              <textarea name="message" rows="3" placeholder="A few details about what you need..."></textarea>
+              <textarea name="message" rows="3" placeholder="A few details about what you need..." minlength="10" maxlength="5000" required></textarea>
             </label>
+            <label class="form-honeypot" aria-hidden="true">
+              Website
+              <input name="website" tabindex="-1" autocomplete="off" />
+            </label>
+            <p class="form-status form-wide is-hidden" id="form-status" role="alert"></p>
             <button class="button button--green form-wide" type="submit">
-              Send enquiry
+              <span>Send enquiry</span>
               <svg width="17" height="17"><use href="#icon-arrow-right"></use></svg>
             </button>
           </form>
 
-          <div class="form-success is-hidden" id="form-success" role="status">
+          <div class="form-success is-hidden" id="form-success" role="status" tabindex="-1">
             <span>Thank you</span>
-            <h3>Your enquiry is ready to go.</h3>
+            <h3>Your enquiry has been sent.</h3>
             <p>
-              This concept form is complete. Connect it to your preferred email, CRM or
-              website platform when the site goes live.
+              Thanks for getting in touch. A member of the team can follow up using the
+              email address you supplied.
             </p>
             <button type="button" class="text-link" id="send-another">
               Send another enquiry
